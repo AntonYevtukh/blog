@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+
+  match '/signup',  to: 'users#new',            via: 'get'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
